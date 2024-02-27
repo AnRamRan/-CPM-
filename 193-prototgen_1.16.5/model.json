@@ -1,0 +1,32 @@
+{
+	"name": "prototgen_1.16.5",
+	"version": "3.0",
+	"author": [ "val9k" ],
+	"description": "simple protogen...",
+	"skeleton": {
+		"type": "biped",
+		"param": {
+			"leg_length": 12,
+			"leg_interval": 6,
+			"leg_offset": 0,
+			"body_pivot_height": 24,
+			"body_offset": 0,
+			"arm_pivot_height": 23.5,
+			"arm_interval": 12,
+			"arm_offset": -0.5,
+			"arm_length": 15,
+			"head_pivot_height": 24,
+			"head_offset": 0
+		},
+		"attachments": {
+			"item_left":["left_item_c"],
+			"item_right":["right_item_c"]
+		}
+	},
+	"parts": [
+		{
+		"name": "protogen.geo",
+		"texture": "proto_tex"
+		}
+	]
+}
