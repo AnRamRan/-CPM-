@@ -1,0 +1,121 @@
+{
+	"modelId": "woodlady",
+	"modelName": "Woodlady",
+                "author": "Kieranyoshi",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"head_all": [0, "if(is_sneaking,-13.0000,-12.0000)", 0],
+		"body_all": [0, -12, 0],
+		"left_arm_all": [-1, -12.5, 0],
+		"right_arm_all": [1, -12.5, 0],
+		"left_leg_all": [-0.5, -17, "if(is_sneaking,2.0000,0.0000)"],
+		"right_leg_all": [0.5, -17, "if(is_sneaking,2.0000,0.0000)"]
+		},
+	"eyeHeight": {
+		"standing": 0.8,
+		"dying": 0.4,
+		"sneaking": 0.5
+	},
+	"boundingBox": {
+		"standing": [0.5, 0.9],
+		"dying": [0.5, 0.5],
+		"sneaking": [0.5, 0.6]
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.woodfemale",
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-6, 0, 6, 12, 5, 12]
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.woodfemale",
+			"boxes": [
+				{
+					"textureOffset": [4, 19],
+					"coordinates": [-1, -5, 1, 2, 5, 2]
+				},
+				{
+					"textureOffset": [0, 28],
+					"coordinates": [-5, -6, 5, 10, 1, 10]
+				}
+			]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": []
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["elytra"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.woodfemale",
+			"rotation": [0, 0, -40],
+			"boxes": [
+				{
+					"textureOffset": [29, 19],
+					"coordinates": [-0.59117, -5.62326, 0.5, 1, 6, 1]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [0, -6, -1]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.woodfemale",
+			"rotation": [0, 0, 40],
+			"boxes": [
+				{
+					"textureOffset": [24, 19],
+					"coordinates": [-0.40883, -5.62326, 0.5, 1, 6, 1]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [0, -6, -1]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.woodfemale",
+			"boxes": [
+				{
+					"textureOffset": [39, 19],
+					"coordinates": [-0.5, -7, 0.5, 1, 7, 1]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.woodfemale",
+			"boxes": [
+				{
+					"textureOffset": [34, 19],
+					"coordinates": [-0.5, -7, 0.5, 1, 7, 1]
+				}
+			]
+		}
+	]
+}

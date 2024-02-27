@@ -1,0 +1,139 @@
+{
+	"modelId": "mimic",
+	"modelName": "Mimic",
+	"version": "1.0.0",
+	"author": "Zeshtay",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {},
+	"eyeHeight": {
+		"standing": 0.6,
+		"dying": 0.6,
+		"sneaking": 0.68
+	},
+	"boundingBox": {
+		"standing": [0.8, 0.8],
+		"dying": [0.8, 0.8],
+		"sneaking": [0.8, 0.8]
+	},
+	"bones": [
+		{
+			"id": "chest",
+			"texture": "tex.mimic",
+			"boxes": [],
+			"position": [0, "if(is_sneaking, -10.68, -16)", 0]
+		},
+		{
+			"id": "top_pivot",
+			"parent": "chest",
+			"position": [0, 1.5, 6.5]
+		},
+		{
+			"id": "top",
+			"parent": "top_pivot",
+			"rotation": [0, "if(is_sneaking, 0, -45 + (sin(age / 5) * 5))", 0],
+			"boxes": [
+				{
+					"textureOffset": [42, 0],
+					"coordinates": [-5, 2.5, -1.5, 10, 2, 10]
+				},
+				{
+					"textureOffset": [18, 0],
+					"coordinates": [-5, -0.5, -11.5, 10, 5, 2]
+				},
+				{
+					"textureOffset": [18, 7],
+					"coordinates": [-5, -0.5, 0.5, 10, 5, 2]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-7, -0.5, 0.5, 2, 5, 14],
+					"mirror": true
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [5, -0.5, 0.5, 2, 5, 14]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-1, -2.5, -13.5, 2, 4, 1]
+				},
+				{
+					"textureOffset": [0, 43],
+					"coordinates": [-6, -2.5, -0.5, 12, 2, 12]
+				}
+			]
+		},
+		{
+			"id": "bottom",
+			"parent": "chest",
+			"position": [0, -7, 5],
+			"boxes": [
+				{
+					"textureOffset": [42, 12],
+					"coordinates": [-5, -1, 0, 10, 2, 10]
+				},
+				{
+					"textureOffset": [18, 19],
+					"coordinates": [-5, -1, -10, 10, 10, 2]
+				},
+				{
+					"textureOffset": [32, 31],
+					"coordinates": [-5, -1, 2, 10, 10, 2]
+				},
+				{
+					"textureOffset": [0, 19],
+					"coordinates": [5, -1, 2, 2, 10, 14]
+				},
+				{
+					"textureOffset": [0, 19],
+					"coordinates": [-7, -1, 2, 2, 10, 14],
+					"mirror": true
+				},
+				{
+					"textureOffset": [0, 57],
+					"coordinates": [-6, 9, 1, 12, 2, 12]
+				}
+			]
+		},
+		{
+			"id": "tongue",
+			"parent": "bottom",
+			"position": [0, 10, 2.5],
+			"rotation": [" -5 + (sin(age / 12) * 10)", "25 + (sin(age / 10) * 1.5)", 0],
+			"visible" : "!is_sneaking",
+			"boxes": [
+				{
+					"textureOffset": [48, 63],
+					"coordinates": [-3, -8, -3, 6, 8, 2]
+				}
+			]
+		},
+		{
+			"id": "bone01",
+			"parent": "tongue",
+			"position": [0, -1, 11],
+			"rotation": [0, 20, 0],
+			"boxes": [
+				{
+					"textureOffset": [48, 53],
+					"coordinates": [-3, 1, -14, 6, 8, 2]
+				}
+			]
+		},
+		{
+			"id": "bone02",
+			"parent": "bone01",
+			"rotation": [0, 20, 0],
+			"boxes": [
+				{
+					"textureOffset": [50, 43],
+					"coordinates": [-2, 19, -11.125, 4, 1, 1]
+				},
+				{
+					"textureOffset": [48, 45],
+					"coordinates": [-3, 13, -10.125, 6, 6, 2]
+				}
+			]
+		}
+	]
+}

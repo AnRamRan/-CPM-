@@ -1,0 +1,188 @@
+{
+	"modelId": "woodmen_palm",
+	"modelName": "Woodmen Palm",
+                "author": "Kieranyoshi",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"head_all": [0, "if(is_sneaking,-13.0000,-12.0000)", 0],
+		"body_all": [0, -12, 0],
+		"left_arm_all": [-2, -13, 0],
+		"right_arm_all": [2, -13, 0],
+		"left_leg_all": [-1, -18, "if(is_sneaking,2.0000,0.0000)"],
+		"right_leg_all": [1, -18, "if(is_sneaking,2.0000,0.0000)"]
+		},
+	"eyeHeight": {
+		"standing": 0.8,
+		"dying": 0.4,
+		"sneaking": 0.5
+	},
+	"boundingBox": {
+		"standing": [0.5, 0.9],
+		"dying": [0.5, 0.5],
+		"sneaking": [0.5, 0.6]
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.woodmalepalmleafs",
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-6, 0, 6, 12, 5, 12]
+				},
+				{
+					"textureOffset": [38, 5],
+					"coordinates": [-2, 5, 2, 4, 1, 4]
+				},
+				{
+					"textureOffset": [55, 6],
+					"coordinates": [-1, 6, 1, 2, 2, 2]
+				}
+			]
+		},
+		{
+			"id": "bone2_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 8, 1]
+		},
+		{
+			"id": "bone2",
+			"parent": "bone2_cpm_dummy",
+			"rotation": [0, 25, 0],
+			"boxes": [
+				{
+					"textureOffset": [55, 31],
+					"coordinates": [-1, 0, 1, 2, 0.001, 1]
+				}
+			]
+		},
+		{
+			"id": "bone4_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 8, 2]
+		},
+		{
+			"id": "bone4",
+			"parent": "bone4_cpm_dummy",
+			"rotation": [0, -65, 0],
+			"boxes": [
+				{
+					"textureOffset": [54, 33],
+					"coordinates": [-2, 0.09369, -0.42362, 4, 8, 0.001]
+				}
+			]
+		},
+		{
+			"id": "bone6_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 8, 1]
+		},
+		{
+			"id": "bone6",
+			"parent": "bone6_cpm_dummy",
+			"rotation": [0, 35, 0],
+			"boxes": [
+				{
+					"textureOffset": [54, 42],
+					"coordinates": [-2, -17.56185, 8.86244, 4, 16, 0.001],
+					"mirror": true
+				}
+			]
+		},
+		{
+			"id": "bone8_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 8, 1]
+		},
+		{
+			"id": "bone8",
+			"parent": "bone8_cpm_dummy",
+			"rotation": [0, 125, 0],
+			"boxes": [
+				{
+					"textureOffset": [55, 59],
+					"coordinates": [-1, -8.86444, -17.56185, 2, 0.001, 1]
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.woodmalepalmleafs",
+			"boxes": [
+				{
+					"textureOffset": [0, 21],
+					"coordinates": [-2, -6, 2, 4, 6, 4]
+				}
+			]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": []
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["elytra"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.woodmalepalmleafs",
+			"boxes": [
+				{
+					"textureOffset": [51, 21],
+					"coordinates": [-2, -5, 1, 2, 6, 2]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [-1, -5.5, -1]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.woodmalepalmleafs",
+			"boxes": [
+				{
+					"textureOffset": [24, 21],
+					"coordinates": [0, -5, 1, 2, 6, 2]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [1, -5.5, -1]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.woodmalepalmleafs",
+			"boxes": [
+				{
+					"textureOffset": [33, 21],
+					"coordinates": [-1, -6, 1, 2, 6, 2]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.woodmalepalmleafs",
+			"boxes": [
+				{
+					"textureOffset": [42, 21],
+					"coordinates": [-1, -6, 1, 2, 6, 2]
+				}
+			]
+		}
+	]
+}

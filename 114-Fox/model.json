@@ -1,0 +1,138 @@
+{
+	"modelId": "fox",
+	"modelName": "Fox",
+	"version": "1.0.0",
+	"author": "Zeshtay",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"body_all": [0, -7, 0],
+		"head_all": [0, "if(is_sneaking, -13, -7)", "if(is_sneaking, -8, -1)"],
+		"right_leg_all": [2, "if(is_sneaking, -12.5, -18)", "if(is_sneaking, 3, 0)"],
+		"left_leg_all": [-2, "if(is_sneaking, -12.5, -18)", "if(is_sneaking, 3, 0)"],
+		"right_arm_all": ["if(is_sneaking, 1, 3)", "if(is_sneaking, -12.5, -9)", "if(is_sneaking, -4, -1)"],
+		"left_arm_all": ["if(is_sneaking, -1, -3)", "if(is_sneaking, -12.5, -9)", "if(is_sneaking, -4, -1)"]
+	},
+	"eyeHeight": {
+		"standing": 1.1,
+		"dying": 1.1,
+		"sneaking": 0.5
+	},
+	"boundingBox": {
+		"standing": [0.5, 1.3],
+		"dying": [0.5, 1.3],
+		"sneaking": [0.5, 0.7]
+	},
+	"bones": [
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.fox",
+			"boxes": [
+				{
+					"textureOffset": [24, 15],
+					"coordinates": [-3, -5, 3, 6, 11, 6]
+				}
+			],
+			"position": [0, "if(is_sneaking, 0, -6)", "if(is_sneaking, -3, 0)"],
+			"rotation": [0, "if(is_sneaking, 62, 0)", 0]
+		},
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.fox",
+			"boxes": [
+				{
+					"textureOffset": [1, 5],
+					"coordinates": [-4, -1, 2, 8, 6, 6]
+				},
+				{
+					"textureOffset": [8, 1],
+					"coordinates": [2, 5, -2, 2, 2, 1]
+				},
+				{
+					"textureOffset": [15, 1],
+					"coordinates": [-4, 5, -2, 2, 2, 1]
+				},
+				{
+					"textureOffset": [6, 18],
+					"coordinates": [-2, -1, -4, 4, 2, 3]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.fox",
+			"boxes": [
+				{
+					"textureOffset": [13, 24],
+					"coordinates": [-0.995, -6, 1, 2, 6, 2]
+				}
+			]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.fox",
+			"boxes": [
+				{
+					"textureOffset": [4, 24],
+					"coordinates": [-1.005, -6, 1, 2, 6, 2]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.fox",
+			"boxes": [
+				{
+					"textureOffset": [13, 24],
+					"coordinates": [0.005, -6, 1, 2, 6, 2]
+				}
+			],
+			"rotation": [0, "if(is_sneaking, -20, 0)", 0]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [1, -6, -1]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.fox",
+			"boxes": [
+				{
+					"textureOffset": [4, 24],
+					"coordinates": [-2.005, -6, 1, 2, 6, 2]
+				}
+			],
+			"rotation": [0, "if(is_sneaking, -20, 0)", 0]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [-1, -6, -1]
+		},
+		{
+			"id": "tail_cpm_dummy",
+			"parent": "body_c",
+			"position": [0, "if(is_sneaking, -5, -4)", "if(is_sneaking, -0.15, 2)"]
+		},
+		{
+			"id": "tail",
+			"texture": "tex.fox",
+			"parent": "tail_cpm_dummy",
+			"rotation": [0, "if(is_sneaking, 0, 70)", 0],
+			"boxes": [
+				{
+					"textureOffset": [30, 0],
+					"coordinates": [-2, -9.0, 2.5, 4, 9, 5]
+				}
+			]
+		}
+	]
+}

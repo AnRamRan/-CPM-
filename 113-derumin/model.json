@@ -1,0 +1,278 @@
+{
+	"modelId": "derumin",
+	"modelName": "derumin",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"head_all": [0, "if(is_sneaking,-1.0000,0.0000)", 0],
+		"body_all": [0, 0, 0],
+		"right_arm_all": [-4, -4, 0],
+		"left_arm_all": [4, -4, 0],
+		"right_leg_all": [-2, -16, "if(is_sneaking,4.0000,0.0000)"],
+		"left_leg_all": [2, -16, "if(is_sneaking,4.0000,0.0000)"]
+	},
+	"variables": {
+		"left_arm_roll": "if(is_first_person,0,25)",
+		"right_arm_roll": "if(is_first_person,0,-25)"
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.derumin",
+			"rotation": [180, 0, 0],
+			"boxes": [
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-3, -3, 3, 6, 6, 6]
+				},
+				{
+					"textureOffset": [96, 18],
+					"coordinates": [1, 3, 4.3, 1, 3, 1]
+				},
+				{
+					"textureOffset": [96, 14],
+					"coordinates": [-2, 3, 4.3, 1, 3, 1]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, -3, 4, 8, 7, 8],
+					"mirror": true
+				}
+			]
+		},
+		{
+			"id": "head_c_helmet_hat",
+			"parent": "head_c",
+			"attached": ["helmet_all", "head_wearing"]
+		},
+		{
+			"id": "l_ear_cpm_dummy",
+			"parent": "head_c",
+			"position": [-4, 17.5, 0.5]
+		},
+		{
+			"id": "l_ear",
+			"parent": "l_ear_cpm_dummy",
+			"rotation": [0, 0, 10],
+			"boxes": [
+				{
+					"textureOffset": [90, 16],
+					"coordinates": [-4, -17.5, 0.5, 2, 1, 1]
+				}
+			]
+		},
+		{
+			"id": "r_ear_cpm_dummy",
+			"parent": "head_c",
+			"position": [4, 17.5, 0.5]
+		},
+		{
+			"id": "r_ear",
+			"parent": "r_ear_cpm_dummy",
+			"rotation": [0, 0, -10],
+			"boxes": [
+				{
+					"textureOffset": [90, 14],
+					"coordinates": [2, -18.5, 0.5, 2, 1, 1]
+				}
+			]
+		},
+		{
+			"id": "r_hair_cpm_dummy",
+			"parent": "head_c",
+			"position": [2, 17.5, -4.5]
+		},
+		{
+			"id": "r_hair",
+			"parent": "r_hair_cpm_dummy",
+			"rotation": [0, -10, 10],
+			"boxes": [
+				{
+					"textureOffset": [100, 14],
+					"coordinates": [-3, -36.5, 3.5, 4, 22, 3]
+				},
+				{
+					"textureOffset": [88, 0],
+					"coordinates": [-4, -34, 4, 6, 10, 4]
+				}
+			]
+		},
+		{
+			"id": "l_hair_cpm_dummy",
+			"parent": "head_c",
+			"position": [-2, 17.5, -4.5]
+		},
+		{
+			"id": "l_hair",
+			"parent": "l_hair_cpm_dummy",
+			"rotation": [0, -10, -10],
+			"boxes": [
+				{
+					"textureOffset": [114, 14],
+					"coordinates": [-1, -36.5, 3.5, 4, 22, 3]
+				},
+				{
+					"textureOffset": [108, 0],
+					"coordinates": [-2, -34, 4, 6, 10, 4]
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.derumin",
+			"rotation": [180, 0, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 30],
+					"coordinates": [-5, -9, 5, 10, 5, 10]
+				},
+				{
+					"textureOffset": [0, 15],
+					"coordinates": [-4, -10, 4, 8, 7, 8]
+				},
+				{
+					"textureOffset": [112, 39],
+					"coordinates": [-2, -5, 2, 4, 10, 4]
+				},
+				{
+					"textureOffset": [86, 18],
+					"coordinates": [-2, 0, 3, 2, 2, 1]
+				}
+			],
+			"position": [0, -8, 0]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": ["armor_body_all"],
+			"position": [0, 8, 0]
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["cape", "elytra"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "body_c_parrot_left",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_left"],
+			"position": [-6.5, 10, 0]
+		},
+		{
+			"id": "body_c_parrot_right",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_right"],
+			"position": [6.5, 10, 0]
+		},
+		{
+			"id": "til_cpm_dummy",
+			"parent": "body_c",
+			"position": [0.5, -8.5, -3.5]
+		},
+		{
+			"id": "til",
+			"parent": "til_cpm_dummy",
+			"rotation": [0, -45, 0],
+			"boxes": [
+				{
+					"textureOffset": [92, 18],
+					"coordinates": [-1, -5.5, -1.5, 1, 6, 1]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.derumin",
+			"rotation": [180, 0, "var.right_arm_roll"],
+			"boxes": [
+				{
+					"textureOffset": [56, 0],
+					"coordinates": [-2, -6, 1, 3, 7, 3]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_chestplate_right",
+			"parent": "right_arm_c",
+			"attached": ["chestplate_right_arm"],
+			"position": [0, -2, 0]
+		},
+		{
+			"id": "right_arm_item_cpm_dummy",
+			"attached": ["held_item_right"],
+			"parent": "right_arm_c",
+			"position": [0, -5, 0]
+		},
+		{
+			"id": "right_arm_item",
+			"parent": "right_arm_item_cpm_dummy",
+			"boxes": []
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.derumin",
+			"rotation": [180, 0,"var.left_arm_roll"],
+			"boxes": [
+				{
+					"textureOffset": [100, 39],
+					"coordinates": [-1, -6, 1, 3, 7, 3]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_chestplate_left",
+			"parent": "left_arm_c",
+			"attached": ["chestplate_left_arm"],
+			"position": [0, -2, 0]
+		},
+		{
+			"id": "left_arm_item_cpm_dummy",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [0, -5, 0]
+		},
+		{
+			"id": "left_arm_item",
+			"parent": "left_arm_item_cpm_dummy",
+			"boxes": []
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.derumin",
+			"rotation": [180, 0, 0],
+			"boxes": [
+				{
+					"textureOffset": [32, 12],
+					"coordinates": [-2, -8, 2, 3, 9, 4]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c_legging_right",
+			"parent": "right_leg_c",
+			"attached": ["armor_right_leg_all"]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.derumin",
+			"rotation": [180, 0, 0],
+			"boxes": [
+				{
+					"textureOffset": [68, 0],
+					"coordinates": [-1, -8, 2, 3, 9, 4]
+				}
+			]
+		},
+		{
+			"id": "left_leg_c_legging_left",
+			"parent": "left_leg_c",
+			"attached": ["armor_left_leg_all"]
+		}
+	]
+}

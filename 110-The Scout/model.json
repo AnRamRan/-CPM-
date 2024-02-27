@@ -1,0 +1,183 @@
+{
+	"modelId": "tf2_scout",
+	"modelName": "The Scout",
+	"author": "Mysterijojo",
+	"version": 1.0,
+	"hide": ["model_all","armor_arms_all","boots_all"],
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.merc",
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8]
+				}
+			]
+		},
+		{
+			"id": "hat",
+			"parent": "head_c",
+			"alpha": "if(inv.helmet==0,1,0)",
+			"boxes": [
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.25
+				},
+				{
+					"textureOffset": [20, 0],
+					"coordinates": [-4, 6.125, -4, 8, 0, 4],
+					"sizeAdd": 0.01
+				}
+			]
+		},
+		{
+			"id": "headpiece",
+			"parent": "hat",
+			"position": [-5, 2, -1],
+			"alpha": "if(inv.helmet==0,1,0)",
+			"boxes": [
+				{
+					"textureOffset": [48, 16],
+					"coordinates": [0, 0, 2, 1, 3, 3]
+				}
+			]
+		},
+		{
+			"id": "microphone",
+			"parent": "headpiece",
+			"rotation": [-5.00, 10.00, -5.00],
+			"alpha": "if(inv.helmet==0,1,0)",
+			"boxes": [
+				{
+					"textureOffset": [32, 32],
+					"coordinates": [0, -1, 0, 5, 2, 4],
+					"sizeAdd": 0.05
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.merc",
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-4, -12, 2, 8, 12, 4]
+				}
+			]
+		},
+		{
+			"id": "right_tag_cpm_dummy",
+			"parent": "body_c",
+			"position": [0, -2, -2]
+		},
+		{
+			"id": "right_tag",
+			"parent": "right_tag_cpm_dummy",
+			"rotation": [-5, -20, 10],
+			"boxes": [
+				{
+					"textureOffset": [56, 16],
+					"coordinates": [0, -2, 0, 1, 2, 0],
+					"sizeAdd":0.01
+				}
+			]
+		},
+		{
+			"id": "left_tag_cpm_dummy",
+			"parent": "body_c",
+			"position": [0, -2, -2]
+		},
+		{
+			"id": "left_tag",
+			"parent": "left_tag_cpm_dummy",
+			"rotation": [5, -10, -10],
+			"boxes": [
+				{
+					"textureOffset": [58, 16],
+					"coordinates": [-1, -2, 0, 1, 2, 0],
+					"sizeAdd":0.01
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.merc",
+			"boxes": [
+				{
+					"textureOffset": [24, 17],
+					"coordinates": [-1, -10, 1.5, 3, 12, 3]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.merc",
+			"boxes": [
+				{
+					"textureOffset": [36, 17],
+					"coordinates": [-2, -10, 1.5, 3, 12, 3]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.merc",
+			"boxes": [
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [-2, -6, 2, 4, 6, 4]
+				},
+				{
+					"textureOffset": [0, 42],
+					"coordinates": [-1.5, -12, 1.5, 3, 6, 3]
+				}
+			]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.merc",
+			"boxes": [
+				{
+					"textureOffset": [16, 32],
+					"coordinates": [-2, -6, 2, 4, 6, 4]
+				},
+				{
+					"textureOffset": [12, 42],
+					"coordinates": [-1.5, -12, 1.5, 3, 6, 3]
+				}
+			]
+		},
+		{
+			"id": "chestplate_right_c",
+			"parent": "right_arm_c",
+			"attached": ["chestplate_right_arm"],
+			"scale": [0.75,1,0.75]
+		},
+		{
+			"id": "chestplate_left_c",
+			"parent": "left_arm_c",
+			"attached": ["chestplate_left_arm"],
+			"scale": [0.75,1,0.75]
+		},
+		{
+			"id": "boot_right_c",
+			"parent": "right_leg_c",
+			"attached": ["boots_right_leg"],
+			"scale": [0.75,1,0.75]
+		},
+		{
+			"id": "boot_left_c",
+			"parent": "left_leg_c",
+			"attached": ["boots_left_leg"],
+			"scale": [0.75,1,0.75]
+		}
+	]
+}
