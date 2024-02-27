@@ -1,0 +1,8 @@
+hey, this is the 1.12 lucarion model.
+You are free to modify it and repost it. (if you repost it with 0 changes, say my pseudo but if you change something, than it is yours)
+
+It have custom walking and running animation. if you want to know how i made the animation, you can ask me on discord (▄█▀zerustu▀█▄#0075 or on the CPM discord https://discord.gg/uVT39n5)
+the short explanation is that i have a tool that convert blockbench animation to a sum of sin and cossin function.
+the walking timer is use to know where whe are in the animation, when walking it gos up and when you stop walking, a strange function get it to the nearest round value (or half value) to get a smooth transition.
+
+the tool used to make the animation can be found here : https://github.com/val9k/CPM_1.12_animation_tool.
