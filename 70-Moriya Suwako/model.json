@@ -1,0 +1,254 @@
+{
+	"modelId": "moriya_suwako",
+	"modelName": "Moriya Suwako",
+	"version": "1.0.0",
+	"author": "Succinum, ZeniCrow, Paulzzh, Tian_mi",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"right_arm_all": [4, -0.66667, 0],
+		"left_arm_all": [-4, -0.66667, 0]
+	},
+	"variables": {
+		"left_arm_roll": "if(is_first_person,0,-25)",
+		"right_arm_roll": "if(is_first_person,0,25)"
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.moriya_suwako",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [36, 16],
+					"coordinates": [-4, 0, 4, 8, 8, 8]
+				}
+			]
+		},
+		{
+			"id": "head_c_helmet_hat",
+			"parent": "head_c",
+			"attached": ["helmet_all", "head_wearing"]
+		},
+		{
+			"id": "head_2",
+			"parent": "head_c",
+			"boxes": []
+		},
+		{
+			"id": "hat",
+			"parent": "head_2",
+			"boxes": []
+		},
+		{
+			"id": "bone",
+			"parent": "head_2",
+			"rotation": [0, -10, 10],
+			"boxes": []
+		},
+		{
+			"id": "bone2",
+			"parent": "head_2",
+			"rotation": [0, -10, -10],
+			"boxes": []
+		},
+		{
+			"id": "hat",
+			"parent": "head_2",
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-4.5, 5, 4.5, 9, 5, 9]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-8, 5, 8, 16, 0.001, 16]
+				},
+				{
+					"textureOffset": [28, 56],
+					"coordinates": [-5, 9, -4, 2, 2, 2]
+				},
+				{
+					"textureOffset": [28, 60],
+					"coordinates": [3, 9, -4, 2, 2, 2]
+				},
+				{
+					"textureOffset": [4, 69],
+					"coordinates": [3.5, 9.5, -6.1, 1, 1, 0.001]
+				},
+				{
+					"textureOffset": [4, 68],
+					"coordinates": [-4.5, 9.5, -6.1, 1, 1, 0.001]
+				}
+			]
+		},
+		{
+			"id": "bone",
+			"parent": "head_2",
+			"rotation": [0, -10, 10],
+			"boxes": [
+				{
+					"textureOffset": [0, 68],
+					"coordinates": [2.93923, -5.37863, -2.81862, 1, 4, 1]
+				},
+				{
+					"textureOffset": [0, 68],
+					"coordinates": [2.93923, -5.37863, -2.81862, 1, 4, 1]
+				}
+			]
+		},
+		{
+			"id": "bone2",
+			"parent": "head_2",
+			"rotation": [0, -10, -10],
+			"boxes": [
+				{
+					"textureOffset": [36, 56],
+					"coordinates": [-3.93923, -5.37863, -2.81862, 1, 4, 1]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.moriya_suwako",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"rotation": [0, 0, "var.right_arm_roll"],
+			"boxes": [
+				{
+					"textureOffset": [20, 56],
+					"coordinates": [0, -8, 1, 2, 8, 2]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_chestplate_right",
+			"parent": "right_arm_c",
+			"attached": ["chestplate_right_arm"],
+			"position": [0, -2, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [1, -12, -1],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.moriya_suwako",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"rotation": [0, 0, "var.left_arm_roll"],
+			"boxes": [
+				{
+					"textureOffset": [12, 56],
+					"coordinates": [-2, -8, 1, 2, 8, 2]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_chestplate_left",
+			"parent": "left_arm_c",
+			"attached": ["chestplate_left_arm"],
+			"position": [0, -2, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [-1, -12, -1],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.moriya_suwako",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [0, 44],
+					"coordinates": [-3, 2.5, 3, 6, 5, 6]
+				},
+				{
+					"textureOffset": [34, 32],
+					"coordinates": [-4, -0.5, 4, 8, 3, 8]
+				},
+				{
+					"textureOffset": [64, 0],
+					"coordinates": [-5, -5.5, 5, 10, 5, 10]
+				},
+				{
+					"textureOffset": [24, 44],
+					"coordinates": [-4, -3.5, 2, 8, 2, 4]
+				}
+			],
+			"position": [0, -7.5, 0]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": ["armor_body_all"],
+			"scale": [0.75, 0.75, 1.05],
+			"position": [0, 10, 0]
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["cape", "elytra"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "body_c_parrot_left",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_left"],
+			"position": [-6.5, 10, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "body_c_parrot_right",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_right"],
+			"position": [6.5, 10, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.moriya_suwako",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [0, 56],
+					"coordinates": [-1.5, -9, 1.5, 3, 9, 3]
+				}
+			]
+		},
+		{
+			"id": "left_leg_c_legging_left",
+			"parent": "left_leg_c",
+			"attached": ["armor_left_leg_all"],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.moriya_suwako",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [48, 44],
+					"coordinates": [-1.5, -9, 1.5, 3, 9, 3]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c_legging_right",
+			"parent": "right_leg_c",
+			"attached": ["armor_right_leg_all"],
+			"scale": [0.75, 0.75, 0.75]
+		}
+	]
+}
