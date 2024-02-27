@@ -1,0 +1,816 @@
+{
+	"modelId": "kagiyama_hina",
+	"modelName": "Kagiyama Hina",
+	"version": "1.0.0",
+	"author": "Succinum, ZeniCrow, Paulzzh, Tian_mi",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"left_arm_all": [-4, -0.66667, 0],
+		"right_arm_all": [4, -0.66667, 0]
+	},
+	"variables": {
+		"left_arm_roll": "if(is_first_person,0,-25)",
+		"right_arm_roll": "if(is_first_person,0,25)"
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.kagiyama_hina",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [32, 36],
+					"coordinates": [-4, 2, 4, 8, 8, 8]
+				},
+				{
+					"textureOffset": [59, 47],
+					"coordinates": [-1, 7.85, 1.25, 2, 2, 5]
+				}
+			]
+		},
+		{
+			"id": "head_c_helmet_hat",
+			"parent": "head_c",
+			"attached": ["helmet_all", "head_wearing"]
+		},
+		{
+			"id": "blink_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, -16, 0]
+		},
+		{
+			"id": "blink",
+			"parent": "blink_cpm_dummy",
+			"visible": "fmod(age,60)<5",
+			"boxes": [
+				{
+					"textureOffset": [28, 62],
+					"coordinates": [-4, 18, -4.001, 8, 8, 0.001]
+				}
+			]
+		},
+		{
+			"id": "hairFront_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 6, -3.25]
+		},
+		{
+			"id": "hairFront",
+			"parent": "hairFront_cpm_dummy",
+			"rotation": [0, -15, 0],
+			"boxes": [
+				{
+					"textureOffset": [68, 68],
+					"coordinates": [-0.5, -10.3637, 1.53528, 1, 2.25, 1]
+				},
+				{
+					"textureOffset": [9, 64],
+					"coordinates": [-0.625, -8.4637, 1.63528, 1.25, 2, 1.6]
+				}
+			]
+		},
+		{
+			"id": "bone8_cpm_dummy",
+			"parent": "hairFront",
+			"position": [4, 2, 0.5]
+		},
+		{
+			"id": "bone8",
+			"parent": "bone8_cpm_dummy",
+			"position": [0, -4, 0],
+			"rotation": [0, 0, -20],
+			"boxes": [
+				{
+					"textureOffset": [21, 58],
+					"coordinates": [0.82146, -3.63069, 1.03528, 1, 2.25, 1]
+				}
+			]
+		},
+		{
+			"id": "bone9",
+			"parent": "bone8",
+			"rotation": [0, 0, -30],
+			"boxes": [
+				{
+					"textureOffset": [64, 68],
+					"coordinates": [2.39278, -6.23354, 1.03528, 1, 4, 1]
+				}
+			]
+		},
+		{
+			"id": "bone6_cpm_dummy",
+			"parent": "hairFront",
+			"position": [-4, 2, 0.5]
+		},
+		{
+			"id": "bone6",
+			"parent": "bone6_cpm_dummy",
+			"position": [0, -4, 0],
+			"rotation": [0, 0, 20],
+			"boxes": [
+				{
+					"textureOffset": [3, 57],
+					"coordinates": [-1.82146, -3.63069, 1.03528, 1, 2.25, 1]
+				}
+			]
+		},
+		{
+			"id": "bone7",
+			"parent": "bone6",
+			"rotation": [0, 0, 30],
+			"boxes": [
+				{
+					"textureOffset": [60, 68],
+					"coordinates": [-3.39278, -6.23354, 1.03528, 1, 4, 1]
+				}
+			]
+		},
+		{
+			"id": "bone28_cpm_dummy",
+			"parent": "hairFront",
+			"position": [0.5, -7.5, 0]
+		},
+		{
+			"id": "bone28",
+			"parent": "bone28_cpm_dummy",
+			"rotation": [0, 0, 25],
+			"boxes": [
+				{
+					"textureOffset": [52, 52],
+					"coordinates": [-2.5, -0.1137, 1.28528, 2, 1.25, 1]
+				},
+				{
+					"textureOffset": [0, 79],
+					"coordinates": [-2.5, 1.1363, 1.28528, 2, 0.15, 1]
+				},
+				{
+					"textureOffset": [0, 79],
+					"coordinates": [-2.5, -0.2637, 1.28528, 2, 0.15, 1]
+				}
+			]
+		},
+		{
+			"id": "bone29_cpm_dummy",
+			"parent": "hairFront",
+			"position": [-0.5, -7.5, 0]
+		},
+		{
+			"id": "bone29",
+			"parent": "bone29_cpm_dummy",
+			"rotation": [0, 0, -25],
+			"boxes": [
+				{
+					"textureOffset": [0, 50],
+					"coordinates": [0.5, -0.1137, 1.28528, 2, 1.25, 1]
+				},
+				{
+					"textureOffset": [0, 79],
+					"coordinates": [0.5, -0.2637, 1.28528, 2, 0.15, 1]
+				},
+				{
+					"textureOffset": [0, 79],
+					"coordinates": [0.5, 1.1363, 1.28528, 2, 0.15, 1]
+				}
+			]
+		},
+		{
+			"id": "hairTop_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 10.5, -1.25]
+		},
+		{
+			"id": "hairTop",
+			"parent": "hairTop_cpm_dummy",
+			"rotation": [0, -15, 0],
+			"boxes": [
+				{
+					"textureOffset": [64, 39],
+					"coordinates": [-1, 0.0647, 1.24148, 2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [-1.2, 0.0647, 1.24148, 0.2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [1, 0.0647, 1.24148, 0.2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "hairDecoMiddleLeft",
+			"parent": "hairTop",
+			"rotation": [0, 0, 40],
+			"boxes": [
+				{
+					"textureOffset": [64, 24],
+					"coordinates": [-0.87523, 0.1487, 1.72444, 2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [-1.07523, 0.1487, 1.72444, 0.2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [1.12477, 0.1487, 1.72444, 0.2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "bone15",
+			"parent": "hairDecoMiddleLeft",
+			"rotation": [0, 0, 40],
+			"boxes": [
+				{
+					"textureOffset": [64, 18],
+					"coordinates": [-0.96177, 0.00674, 1.14489, 2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [1.03823, 0.00674, 1.14489, 0.2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [-1.16177, 0.00674, 1.14489, 0.2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "hairDecoMiddleRight",
+			"parent": "hairTop",
+			"rotation": [0, 0, -40],
+			"boxes": [
+				{
+					"textureOffset": [44, 62],
+					"coordinates": [-1.12477, 0.1487, 1.72444, 2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [0.87523, 0.1487, 1.72444, 0.2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [-1.32477, 0.1487, 1.72444, 0.2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "bone17",
+			"parent": "hairDecoMiddleRight",
+			"rotation": [0, 0, -40],
+			"boxes": [
+				{
+					"textureOffset": [1, 79],
+					"coordinates": [-1.23823, 0.00674, 1.14489, 0.2, 4, 2]
+				},
+				{
+					"textureOffset": [0, 44],
+					"coordinates": [-1.03823, 0.00674, 1.14489, 2, 4, 2]
+				},
+				{
+					"textureOffset": [1, 78],
+					"coordinates": [0.96177, 0.00674, 1.14489, 0.2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "hairDecoLeft",
+			"parent": "hairTop",
+			"position": [-7, 0, 0],
+			"rotation": [-20, 30, -10],
+			"boxes": [
+				{
+					"textureOffset": [38, 34],
+					"coordinates": [0, 0, 2, 6, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone19",
+			"parent": "hairDecoLeft",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, 60],
+			"boxes": [
+				{
+					"textureOffset": [38, 34],
+					"coordinates": [0, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone20",
+			"parent": "bone19",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, 45],
+			"boxes": [
+				{
+					"textureOffset": [38, 34],
+					"coordinates": [0, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone21",
+			"parent": "bone20",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, -35],
+			"boxes": [
+				{
+					"textureOffset": [38, 34],
+					"coordinates": [0, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone22",
+			"parent": "bone21",
+			"rotation": [0, 0, -45],
+			"boxes": [
+				{
+					"textureOffset": [38, 34],
+					"coordinates": [-4, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "hairDecoSideLeft2",
+			"parent": "hairTop",
+			"position": [-7, 0, 0],
+			"rotation": [-20, 30, -10],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 2.25, 6, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone31",
+			"parent": "hairDecoSideLeft2",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, 60],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone32",
+			"parent": "bone31",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, 45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone33",
+			"parent": "bone32",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, -35],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone34",
+			"parent": "bone33",
+			"rotation": [0, 0, -45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "hairDecoSideLeft1",
+			"parent": "hairTop",
+			"position": [-7, 0, 0],
+			"rotation": [-20, 30, -10],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 0, 6, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone36",
+			"parent": "hairDecoSideLeft1",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, 60],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone37",
+			"parent": "bone36",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, 45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone38",
+			"parent": "bone37",
+			"position": [-4, 0, 0],
+			"rotation": [0, 0, -35],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone39",
+			"parent": "bone38",
+			"rotation": [0, 0, -45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "hairDecoRight",
+			"parent": "hairTop",
+			"position": [7, 0, 0],
+			"rotation": [20, 30, 10],
+			"boxes": [
+				{
+					"textureOffset": [35, 32],
+					"coordinates": [-6, 0, 2, 6, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone24",
+			"parent": "hairDecoRight",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, -60],
+			"boxes": [
+				{
+					"textureOffset": [35, 32],
+					"coordinates": [-4, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone25",
+			"parent": "bone24",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, -45],
+			"boxes": [
+				{
+					"textureOffset": [35, 32],
+					"coordinates": [-4, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone26",
+			"parent": "bone25",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, 35],
+			"boxes": [
+				{
+					"textureOffset": [35, 32],
+					"coordinates": [-4, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "bone27",
+			"parent": "bone26",
+			"rotation": [0, 0, 45],
+			"boxes": [
+				{
+					"textureOffset": [35, 32],
+					"coordinates": [0, 0, 2, 4, 0.001, 2]
+				}
+			]
+		},
+		{
+			"id": "hairDecoSideRight2",
+			"parent": "hairTop",
+			"position": [7, 0, 0],
+			"rotation": [20, 30, 10],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-6, 0, 0, 6, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone41",
+			"parent": "hairDecoSideRight2",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, -60],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone42",
+			"parent": "bone41",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, -45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone43",
+			"parent": "bone42",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, 35],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone44",
+			"parent": "bone43",
+			"rotation": [0, 0, 45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 0, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "hairDecoSideRight1",
+			"parent": "hairTop",
+			"position": [7, 0, 0],
+			"rotation": [20, 30, 10],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-6, 0, 2.25, 6, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone46",
+			"parent": "hairDecoSideRight1",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, -60],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone47",
+			"parent": "bone46",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, -45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone48",
+			"parent": "bone47",
+			"position": [4, 0, 0],
+			"rotation": [0, 0, 35],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [-4, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "bone49",
+			"parent": "bone48",
+			"rotation": [0, 0, 45],
+			"boxes": [
+				{
+					"textureOffset": [0, 78],
+					"coordinates": [0, 0, 2.25, 4, 0.001, 0.25]
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.kagiyama_hina",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [54, 56],
+					"coordinates": [-3, 12, 3, 6, 6, 6]
+				},
+				{
+					"textureOffset": [0, 55],
+					"coordinates": [-3.5, 10, 3.5, 7, 2, 7]
+				},
+				{
+					"textureOffset": [28, 52],
+					"coordinates": [-4, 8, 4, 8, 2, 8]
+				},
+				{
+					"textureOffset": [0, 44],
+					"coordinates": [-4.5, 6, 4.5, 9, 2, 9]
+				},
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [-5, 4, 5, 10, 2, 10]
+				},
+				{
+					"textureOffset": [56, 32],
+					"coordinates": [-3.5, 6.25, 2, 7, 3, 4]
+				}
+			],
+			"position": [0, -16, 0]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": ["armor_body_all"],
+			"scale": [0.75, 0.75, 1.05],
+			"position": [0, 21.33333, 0]
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["cape", "elytra"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "body_c_parrot_left",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_left"],
+			"position": [-6.5, 10, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "body_c_parrot_right",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_right"],
+			"position": [6.5, 10, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "chestPlate",
+			"parent": "body_c",
+			"boxes": []
+		},
+		{
+			"id": "sinFloat",
+			"parent": "chestPlate",
+			"position": [0, "sin(age/10)*0.8", 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-16, 0, 12, 32, 32, 0.001]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.kagiyama_hina",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [12, 64],
+					"coordinates": [-1.5, -9, 1.5, 3, 9, 3]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c_legging_right",
+			"parent": "right_leg_c",
+			"attached": ["armor_right_leg_all"],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.kagiyama_hina",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"boxes": [
+				{
+					"textureOffset": [0, 64],
+					"coordinates": [-1.5, -9, 1.5, 3, 9, 3]
+				}
+			]
+		},
+		{
+			"id": "left_leg_c_legging_left",
+			"parent": "left_leg_c",
+			"attached": ["armor_left_leg_all"],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.kagiyama_hina",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"rotation": [0, 0, "var.left_arm_roll"],
+			"boxes": [
+				{
+					"textureOffset": [64, 12],
+					"coordinates": [-2.5, -3, 1.5, 3, 3, 3]
+				},
+				{
+					"textureOffset": [30, 32],
+					"coordinates": [-2, -9, 1, 2, 8, 2]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_chestplate_left",
+			"parent": "left_arm_c",
+			"attached": ["chestplate_left_arm"],
+			"position": [0, -2, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [-1, -12, -1],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "handDeco",
+			"parent": "left_arm_c",
+			"boxes": [
+				{
+					"textureOffset": [64, 0],
+					"coordinates": [-2.5, -8, 1.5, 3, 3, 3]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.kagiyama_hina",
+			"scale": [1.33333, 1.33333, 1.33333],
+			"rotation": [0, 0, "var.right_arm_roll"],
+			"boxes": [
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [0, -9, 1, 2, 8, 2]
+				},
+				{
+					"textureOffset": [64, 6],
+					"coordinates": [-0.5, -3, 1.5, 3, 3, 3]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_chestplate_right",
+			"parent": "right_arm_c",
+			"attached": ["chestplate_right_arm"],
+			"position": [0, -2, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [1, -12, -1],
+			"scale": [0.75, 0.75, 0.75]
+		}
+	]
+}
