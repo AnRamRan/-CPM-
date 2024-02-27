@@ -1,0 +1,125 @@
+{
+	"modelId": "mortyalex",
+	"modelName": "Morty",
+	"version": "1",
+	"author": "eros71",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {},
+	"bones": [
+		{
+			"id": "Head",
+			"texture": "tex.mortyalex",
+			"rotation": [5, -6, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8]
+				},
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.5
+				}
+			]
+		},
+		{
+			"id": "Body",
+			"texture": "tex.mortyalex",
+			"boxes": [
+				{
+					"textureOffset": [16, 16],
+					"coordinates": [-4, -12, 2, 8, 12, 4]
+				},
+				{
+					"textureOffset": [16, 32],
+					"coordinates": [-4, -12, 2, 8, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "RightArm_cpm_dummy",
+			"position": [5, -2.5, 0]
+		},
+		{
+			"id": "RightArm",
+			"texture": "tex.mortyalex",
+			"parent": "RightArm_cpm_dummy",
+			"rotation": [0, -10, 0],
+			"boxes": [
+				{
+					"textureOffset": [40, 16],
+					"coordinates": [-1, -11, 2, 3, 13, 4]
+				},
+				{
+					"textureOffset": [40, 32],
+					"coordinates": [-1, -10, 2, 3, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "LeftArm_cpm_dummy",
+			"position": [-5, -2.5, 0]
+		},
+		{
+			"id": "LeftArm",
+			"texture": "tex.mortyalex",
+			"parent": "LeftArm_cpm_dummy",
+			"rotation": [0, 12, 0],
+			"boxes": [
+				{
+					"textureOffset": [32, 47],
+					"coordinates": [-2, -11, 2, 3, 13, 4]
+				},
+				{
+					"textureOffset": [48, 48],
+					"coordinates": [-2, -10, 2, 3, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "RightLeg_cpm_dummy",
+			"position": [1.9, -12, 0]
+		},
+		{
+			"id": "RightLeg",
+			"texture": "tex.mortyalex",
+			"parent": "RightLeg_cpm_dummy",
+			"rotation": [0, 11, 2],
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "LeftLeg_cpm_dummy",
+			"position": [-1.9, -12, 0]
+		},
+		{
+			"id": "LeftLeg",
+			"texture": "tex.mortyalex",
+			"parent": "LeftLeg_cpm_dummy",
+			"rotation": [0, -10, -2],
+			"boxes": [
+				{
+					"textureOffset": [16, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		}
+	]
+}

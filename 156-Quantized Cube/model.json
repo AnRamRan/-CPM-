@@ -1,0 +1,41 @@
+{
+	"modelId": "magicblock",
+	"modelName": "Quantized Cube",
+	"author": "ShareYourHead",
+	"hide": ["model_all", "feature_all"],
+	"variables": {
+		"centerx": "pos_x-(floor(pos_x)+0.5)",
+		"centerz": "pos_z-(floor(pos_z)+0.5)",
+		"centerdist": "sqrt(pow(var.centerx,2)+pow(var.centerz,2))",
+		"centerangle": "todeg(atan(var.centerz/var.centerx))"
+	},
+	"skeleton": {
+		"body_all": ["cos(((body_yaw-var.centerangle)/180)*pi)*signum(signum(var.centerx)+0.5)*var.centerdist*(16/0.9375)", "(floor(pos_y+0.5)-pos_y)*(16/0.9375)", "-sin(((body_yaw-var.centerangle)/180)*pi)*signum(signum(var.centerx)+0.5)*var.centerdist*(16/0.9375)"]
+	},
+	"eyeHeight": {
+		"standing": 0.5,
+		"dying": 0.5,
+		"sneaking": 0.5
+	},
+	"boundingBox": {
+		"standing": [0.8, 1.0],
+		"dying": [0.8, 1.0],
+		"sneaking": [0.8, 1.0]
+	},
+	"bones": [
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.block",
+			"textureSize": [64, 64],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-8, -22.5, 8, 16, 16, 16]
+				}
+			],
+			"rotation": ["-body_yaw", 0, 0],
+			"scale": ["1/0.9375", "1/0.9375", "1/0.9375"]
+		}
+	]
+}

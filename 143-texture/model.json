@@ -1,0 +1,192 @@
+{
+	"modelId": "texture",
+	"modelName": "texture",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"head_all": [0, "if(is_sneaking,10.0000,11.0000)", 0],
+		"body_all": [0, 11, 0],
+		"right_arm_all": [10, 8.5, 0],
+		"left_arm_all": [-10, 8.5, 0],
+		"right_leg_all": [2.5, -9, "if(is_sneaking,4.0000,0.0000)"],
+		"left_leg_all": [-2.5, -9, "if(is_sneaking,4.0000,0.0000)"]
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.texture",
+			"scale": [1.25, 1.25, 1.25],
+			"boxes": [
+				{
+					"textureOffset": [0, 36],
+					"coordinates": [-4, -5, 1, 8, 8, 8]
+				}
+			]
+		},
+		{
+			"id": "headwear_c_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, -5, -3]
+		},
+		{
+			"id": "headwear_c",
+			"parent": "headwear_c_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [28, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.texture",
+			"scale": [1.25, 1.25, 1.25],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, -14, 4, 8, 16, 6],
+					"sizeAdd": 0.25
+				},
+				{
+					"textureOffset": [21, 21],
+					"coordinates": [-5, -13, 3, 10, 8, 7],
+					"sizeAdd": 0.25
+				},
+				{
+					"textureOffset": [32, 36],
+					"coordinates": [-5, -3, 5, 10, 6, 7],
+					"sizeAdd": 0.25
+				}
+			],
+			"position": [0, -4, 0]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": ["armor_body_all"],
+			"scale": [0.8, 0.8, 0.8],
+			"position": [0, 5, 0]
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["cape"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.texture",
+			"scale": [1.25, 1.25, 1.25],
+			"boxes": [
+				{
+					"textureOffset": [0, 52],
+					"coordinates": [-2, -14, 2, 4, 14, 4]
+				},
+				{
+					"textureOffset": [44, 49],
+					"coordinates": [-2, -6, 3, 5, 6, 6]
+				},
+				{
+					"textureOffset": [16, 60],
+					"coordinates": [-3, -4, 2, 1, 4, 4]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_chestplate_right",
+			"parent": "right_arm_c",
+			"attached": ["chestplate_right_arm"],
+			"position": [0, -2, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [1, -12, -1],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.texture",
+			"scale": [1.25, 1.25, 1.25],
+			"boxes": [
+				{
+					"textureOffset": [48, 16],
+					"coordinates": [-3, -6, 3, 5, 6, 6]
+				},
+				{
+					"textureOffset": [28, 49],
+					"coordinates": [-2, -14, 2, 4, 14, 4]
+				},
+				{
+					"textureOffset": [16, 52],
+					"coordinates": [2, -4, 2, 1, 4, 4]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_chestplate_left",
+			"parent": "left_arm_c",
+			"attached": ["chestplate_left_arm"],
+			"position": [0, -2, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [-1, -12, -1],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.texture",
+			"scale": [1.25, 1.25, 1.25],
+			"boxes": [
+				{
+					"textureOffset": [60, 0],
+					"coordinates": [-1, -12, 3, 4, 10, 5]
+				},
+				{
+					"textureOffset": [0, 22],
+					"coordinates": [-1, -12, 0, 4, 2, 4]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c_legging_right",
+			"parent": "right_leg_c",
+			"attached": ["armor_right_leg_all"],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.texture",
+			"scale": [1.25, 1.25, 1.25],
+			"boxes": [
+				{
+					"textureOffset": [59, 28],
+					"coordinates": [-3, -12, 3, 4, 10, 5]
+				},
+				{
+					"textureOffset": [0, 28],
+					"coordinates": [-3, -12, 0, 4, 2, 4]
+				}
+			]
+		},
+		{
+			"id": "left_leg_c_legging_left",
+			"parent": "left_leg_c",
+			"attached": ["armor_left_leg_all"],
+			"scale": [0.8, 0.8, 0.8]
+		}
+	]
+}
