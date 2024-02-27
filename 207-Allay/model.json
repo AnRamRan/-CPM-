@@ -1,0 +1,57 @@
+{
+	"name": "Allay",
+	"version": "1.0",
+	"author": ["mojang","pkuyora"],
+	"description": "an allay, model from game",
+	"url": "",
+	"skeleton": {
+		"type": "biped",
+		"param": {
+			"leg_length": 0,
+			"leg_interval": 4,
+			"leg_offset": 0,
+			"body_pivot_height": 14.01,
+			"body_offset": 0,
+			"arm_pivot_height":  14,
+			"arm_interval": 5,
+			"arm_offset": 0,
+			"arm_length": 4,
+			"head_pivot_height": 14.01,
+			"head_offset": 0
+		},
+		"left_arm": ["left_arm_c"],
+		"right_arm": ["right_arm_c"]
+	},
+	"parts": [
+		{
+			"name": "Allay",
+			"texture": "allay_texture"
+		}
+	],
+	"size": {
+		"standing": [0.5, 0.5],
+		"sneaking": [0.45, 1.225]
+	},
+	"eye_height": {
+		"standing": [1.215, 0.6075],
+		"sneaking": [0.9525, 0.47625]
+	},
+	"attachments": {
+        "helmet": [],
+		"chestplate_body":[],
+		"chestplate_left":[],
+		"chestplate_right":[],
+		"leggings_body":[],
+		"leggings_left":[],
+		"leggings_right":[],
+		"boots_left":[],
+		"boots_right":[],
+		"item_left":[],
+		"item_right":["right_arm_c"],
+		"cape":[],
+		"skull":[],
+		"elytra":[],
+		"parrot_left":[],
+		"parrot_right":[]
+    }
+}

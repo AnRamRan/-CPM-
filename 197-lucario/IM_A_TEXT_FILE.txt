@@ -1,0 +1,8 @@
+hey, this is the 1.16 lucarion model.
+You are free to modify it and repost it. (if you repost it with 0 changes, say my pseudo but if you change something, than it is yours)
+
+It have custom walking and running animation. if you want to know how i made the animation, you can ask me on discord (▄█▀zerustu▀█▄#0075 or on the CPM discord https://discord.gg/uVT39n5)
+
+the tool used to make the animation can be found here : https://github.com/DearFox/cpm-tools
+
+you can also find a 1.12 lucario model
