@@ -1,0 +1,155 @@
+{
+	"modelId": "pbpmam",
+	"modelName": "Physics based player model(Alex) Modified",
+	"author": "Superpowers04, Cipher",
+	"hide": ["model_all","feature_all","armor_all","leggings_body"],
+	"fpLeft": ["left_arm_c"],
+	"fpRight": ["right_arm_c"],
+	"bones": [
+		{
+			"id": "body_c",
+			"parent": "body",
+			"position": [0,-0.1,0],
+			"rotation": ["body.rx * 100","body.ry * 100",0],
+			"physics": [0.9, 0.15, 0.5, 0, 0.1],
+			"attached": [ "chestplate_body","leggings_body", "cape", "elytra" ],
+
+			"boxes": [
+				{
+					"textureOffset": [16, 16],
+					"coordinates": [-4, -12, 2, 8, 12, 4]
+				},
+				{
+					"textureOffset": [16, 32],
+					"coordinates": [-4, -12, 2, 8, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "head_c",
+			"parent": "body_c",
+			"attached": [ "helmet_head","helmet_head_overlay", "head_wearing" ],
+			"rotation": ["head_yaw", "head_pitch", 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8]
+				},
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.5
+				}
+			]
+		},
+		{
+			"id": "larm",
+			"parent": "body_c",
+			"position": [-5,-2,0]
+		},
+		{
+			"id": "rarm",
+			"parent": "body_c",
+			"position": [5,-2,0]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "larm",
+			"position": [0,-0.1,0],
+			"rotation": ["left_arm.rx * 10","left_arm.ry * 10",0],
+			"physics": [0.3, 0.15, 0.5, 0, 0.1],
+			"attached": [ "chestplate_left_arm" ],
+			"boxes": [
+				{
+					"textureOffset": [32, 48],
+					"coordinates": [-2, -10, 2, 3, 12, 4]
+				},
+				{
+					"textureOffset": [48, 48],
+					"coordinates": [-2, -10, 2, 3, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "rarm",
+			"position": [0,-0.1,0],
+			"attached": [ "chestplate_right_arm" ],
+			"physics": [0.3, 0.15, 0.5, 0, 0.1],
+			"rotation": ["right_arm.rx * 10","right_arm.ry * 10",0],
+			"boxes": [
+				{
+					"textureOffset": [40, 16],
+					"coordinates": [-1, -10, 2, 3, 12, 4]
+				},
+				{
+					"textureOffset": [40, 32],
+					"coordinates": [-1, -10, 2, 3, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "lleg",
+			"parent": "body_c",
+			"position": [2,-11,0]
+		},
+		{
+			"id": "rleg",
+			"parent": "body_c",
+			"position": [-2,-11,0]
+		},
+		{
+			"id": "right_arm_item",
+			"parent": "right_arm_c",
+			"position": [0,-10,0],
+			"attached": [ "held_item_right" ]
+
+		},
+		{
+			"id": "left_arm_item",
+			"parent": "left_arm_c",
+			"position": [0,-10,0],
+			"attached": [ "held_item_left" ]
+
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "lleg",
+			"position": [0,-0.1,0],
+			"attached": [ "boots_left_leg", "leggings_left_leg" ],
+			"physics": [0.7, 0.15, 0.5, 0, 0.5],
+			"boxes": [
+				{
+					"textureOffset": [16, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "rleg",
+			"position": [0,-0.1,0],
+			"attached": [ "boots_right_leg", "leggings_right_leg" ],
+			"physics": [0.7, 0.15, 0.5, 0, 0.5],
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		}
+	]
+}

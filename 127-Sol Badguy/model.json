@@ -1,0 +1,260 @@
+{
+	"modelId": "sol2",
+	"modelName": "Sol Badguy",
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {},
+	"bones": [
+		{
+			"id": "Head",
+			"texture": "tex.sol2",
+			"rotation": [30, 4, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8]
+				},
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.5
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-0.64757, 4.40372, 5.08668, 1.64377, 1.59628, 1.45516]
+				}
+			]
+		},
+		{
+			"id": "extrahair_cpm_dummy",
+			"parent": "Head",
+			"position": [0.34862, -0.578, 4.06748]
+		},
+		{
+			"id": "extrahair",
+			"parent": "extrahair_cpm_dummy",
+			"rotation": [0, 20, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-0.73473, 1.03599, 3.76071, 1.47326, 3.37158, 1]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-0.64757, -2.1159, 4.00155, 1.47326, 3.37158, 1]
+				}
+			]
+		},
+		{
+			"id": "bone_cpm_dummy",
+			"parent": "extrahair",
+			"position": [0, 1.94059, 0.48384]
+		},
+		{
+			"id": "bone",
+			"parent": "bone_cpm_dummy",
+			"rotation": [0, -15, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-0.56042, -6.23808, 4.00046, 1.47326, 3.37158, 1]
+				}
+			]
+		},
+		{
+			"id": "bone2_cpm_dummy",
+			"parent": "extrahair",
+			"position": [0.08716, 0.72929, 1.20853]
+		},
+		{
+			"id": "bone2",
+			"parent": "bone2_cpm_dummy",
+			"rotation": [0, -15, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-0.64757, -7.93767, 2.55001, 1.47326, 3.37158, 1]
+				}
+			]
+		},
+		{
+			"id": "bone3",
+			"parent": "bone2",
+			"position": [-0.26147, 2.06002, -3.69972],
+			"rotation": [0, -15, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-0.21179, -12.44806, 8.2173, 1.47326, 3.37158, 1]
+				}
+			]
+		},
+		{
+			"id": "bone4",
+			"parent": "bone3",
+			"position": [1.1001, 1.57224, -0.4326],
+			"rotation": [10, -20, 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-3.23712, 0.91187, 0.79711, 1.37849, 5.69804, 1]
+				}
+			]
+		},
+		{
+			"id": "bone6",
+			"parent": "bone4",
+			"rotation": [0, 1, -5],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [0.45325, 1.75598, -0.04342, 1.37849, 4.16003, 1]
+				}
+			]
+		},
+		{
+			"id": "bone8",
+			"parent": "Head",
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [0.78155, 7.37484, 2.1492, 3.26147, 2.46398, 3.80844]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-3.33721, 6.57246, 2.10453, 3.20323, 3.27215, 5.53914]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [1.28332, 9.01872, -1.53277, 2.17253, 1.67957, 2.62537]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-3.37464, 9.30768, -1.39425, 2.17253, 1.67957, 3.11456]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [2.18678, 9.30195, -3.42825, 1, 1.61372, 2.46806]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-3.46738, 9.59697, -4.46401, 1, 1.34169, 1.87058]
+				},
+				{
+					"textureOffset": [1, 0],
+					"coordinates": [-3.00761, 8.05878, 0.77339, 4.92426, 2.06205, 4.5108]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-2.17431, 6.75339, 0.33211, 4.1667, 2.14069, 3.04528]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-1.80448, 8.83588, -1.25817, 3.25766, 3.15528, 3.14914]
+				},
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-1.39164, 11.7812, -4.33114, 1.25766, 1.3745, 2.13988]
+				}
+			]
+		},
+		{
+			"id": "Body",
+			"texture": "tex.sol2",
+			"boxes": [
+				{
+					"textureOffset": [16, 16],
+					"coordinates": [-4, -12, 2, 8, 12, 4]
+				},
+				{
+					"textureOffset": [16, 32],
+					"coordinates": [-4, -12, 2, 8, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "RightArm_cpm_dummy",
+			"position": [5, -2, 0]
+		},
+		{
+			"id": "RightArm",
+			"texture": "tex.sol2",
+			"parent": "RightArm_cpm_dummy",
+			"rotation": [0, -10, 0],
+			"boxes": [
+				{
+					"textureOffset": [40, 16],
+					"coordinates": [-1, -10, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [40, 32],
+					"coordinates": [-1, -10, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "LeftArm_cpm_dummy",
+			"position": [-5, -2, 0]
+		},
+		{
+			"id": "LeftArm",
+			"texture": "tex.sol2",
+			"parent": "LeftArm_cpm_dummy",
+			"rotation": [0, 12, 0],
+			"boxes": [
+				{
+					"textureOffset": [32, 48],
+					"coordinates": [-3, -10, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [48, 48],
+					"coordinates": [-3, -10, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "RightLeg_cpm_dummy",
+			"position": [1.9, -12, 0]
+		},
+		{
+			"id": "RightLeg",
+			"texture": "tex.sol2",
+			"parent": "RightLeg_cpm_dummy",
+			"rotation": [0, 11, 2],
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "LeftLeg_cpm_dummy",
+			"position": [-1.9, -12, 0]
+		},
+		{
+			"id": "LeftLeg",
+			"texture": "tex.sol2",
+			"parent": "LeftLeg_cpm_dummy",
+			"rotation": [0, -10, -2],
+			"boxes": [
+				{
+					"textureOffset": [16, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 48],
+					"coordinates": [2, -12, 2, 0.001, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		}
+	]
+}

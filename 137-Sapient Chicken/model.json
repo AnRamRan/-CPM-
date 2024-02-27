@@ -1,0 +1,501 @@
+{
+	"modelId": "wk_chicken",
+	"modelName": "Sapient Chicken",
+	"author": "WolfKat",
+
+	"hide": ["model_all", "feature_all"],
+
+	"fpLeft": [ "left_arm_c"],
+	"fpRight": [ "right_arm_c"],
+
+	"variables": {
+		"pskin": "tex.chickenskin",
+		"armortexL": "tex.chickenarmor_leather",
+		"armortexC": "tex.chickenarmor_chain",
+		"armortexG": "tex.chickenarmor_gold",
+		"armortexI": "tex.chickenarmor_iron",
+		"armortexD": "tex.chickenarmor_diamond",
+		"l_helm_eqd": "inv.helmet == item.leather_helmet",
+		"l_chest_eqd": "inv.chestplate == item.leather_chestplate",
+		"l_legs_eqd": "inv.leggings == item.leather_leggings",
+		"l_boots_eqd": "inv.boots == item.leather_boots",
+		"m_helm_eqd": "inv.helmet == item.chainmail_helmet || inv.helmet == item.golden_helmet",
+		"m_chest_eqd": "inv.chestplate == item.chainmail_chestplate || inv.chestplate == item.golden_chestplate",
+		"m_legs_eqd": "inv.leggings == item.chainmail_leggings || inv.leggings == item.golden_leggings",
+		"m_boots_eqd": "inv.boots == item.chainmail_boots || inv.boots == item.golden_boots",
+		"h_helm_eqd": "inv.helmet == item.iron_helmet || inv.helmet == item.diamond_helmet",
+		"h_chest_eqd": "inv.chestplate == item.iron_chestplate || inv.chestplate == item.diamond_chestplate",
+		"h_legs_eqd": "inv.leggings == item.iron_leggings || inv.leggings == item.diamond_leggings",
+		"h_boots_eqd": "inv.boots == item.iron_boots || inv.boots == item.diamond_boots",
+		"any_helm_eqd": "var.l_helm_eqd || var.m_helm_eqd || var.h_helm_eqd",
+		"any_chest_eqd": "var.l_chest_eqd || var.m_chest_eqd || var.h_chest_eqd",
+		"any_legs_eqd": "var.l_legs_eqd || var.m_legs_eqd || var.h_legs_eqd",
+		"any_boots_eqd": "var.l_boots_eqd || var.m_boots_eqd || var.h_boots_eqd",
+
+		"shield_held_main": "inv.mainhand == item.shield",
+		"shield_held_off": "inv.offhand == item.shield",
+
+		"low_health": "health <= 8",
+		"low_hunger": "food_level <= 10",
+		"is_hurt": "hurt_time >= 0",
+		"is_sleeping": "current_pose == pose.sleeping",
+		"full_sprint" : "is_sprinting && !is_sneaking"
+	},
+	"eyeHeight": {
+		"standing": 1.3,
+		"dying": 1.3,
+		"sneaking": 1,
+		"fall_flying": 1.3,
+		"sleeping": 1,
+		"swimming": 1,
+		"spin_attack": 1.3
+	},
+	"boundingBox": {
+		"standing": [0.6, 1.6],
+		"dying": [0.6, 1.6],
+		"sneaking": [0.6, 0.6],
+		"fall_flying": [0.6, 1.6],
+		"sleeping": [0.6, 0.6],
+		"swimming": [0.6, 0.6],
+		"spin_attack": [0.6, 1.6]
+	},
+	"skeleton": {
+		"body_all": [0, "if(is_sneaking, -9, if(is_riding, -7, if(var.low_health && !is_riding, -13, -12)))", 0],
+		"head_all": [0, "if(is_sneaking, -10, if(is_riding, -7, if(var.low_health && !is_riding, -13, -12)))", "if(is_sneaking, 0, if(var.low_health || var.low_hunger, -4.3 + sin(limb_swing / 4) * 1 + cos(limb_speed / 3.5) * 0.5, -4.3 + sin(limb_swing / 1) * 1 + cos(limb_speed / 0.5) * 0.5))"],
+		"left_arm_all": [-4, "if(is_sneaking, -12.5, if(is_riding, -9, if(var.low_health && !is_riding, -16, -14)))", "if(is_sneaking, 0.5, -2)"],
+		"right_arm_all": [4, "if(is_sneaking, -12.5, if(is_riding, -9, if(var.low_health, -16, -14)))", "if(is_sneaking, 0.5, -2)"],
+		"left_leg_all": [-2, "if(is_sneaking, -12, if(is_riding, -13.5, -18))", "if(is_sneaking, 5, if(is_riding, 0.5, if(var.low_health && !is_riding, 0, 1)))"],
+		"right_leg_all": [2, "if(is_sneaking, -12, if(is_riding, -13.5, -18))", "if(is_sneaking, 5, if(is_riding, 0.5, if(var.low_health && !is_riding, 0.5, 1)))"]
+	},
+	"bones": [
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "var.pskin",
+			"boxes": [],
+			"position": [0, -4, 0]
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c",
+			"attached": ["cape", "elytra"],
+			"texture": "tex.skin",
+			"scale": [0.6, 0.6, 0.6],
+			"position": [0, 11, 2],
+			"rotation": [0, 80, 0]
+		},
+		{
+			"id": "body_c_parrot_left",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_left"],
+			"position": [0, 3, 1],
+			"rotation": [0, "if(is_sneaking, -25, 0)", 0]
+		},
+		{
+			"id": "body_c_parrot_right",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_right"],
+			"position": [0, 3, 6],
+			"rotation": [0, "if(is_sneaking, -30, 0)", 0]
+		},
+		{
+			"id": "main_body_cpm_dummy",
+			"parent": "body_c",
+			"position": [0, -2, "if(is_sneaking, 4, 2)"],
+			"rotation": [0, "if(is_sneaking, -17, 0)", 0]
+		},
+		{
+			"id": "main_body",
+			"parent": "main_body_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [34, 0],
+					"coordinates": [-4, -1, 3, 8, 7, 9]
+				}
+			]
+		},
+		{
+			"id": "chestplate_cpm_dummy",
+			"parent": "body_c",
+			"texture": "if(inv.chestplate == item.leather_chestplate, var.armortexL, if(inv.chestplate == item.chainmail_chestplate, var.armortexC, if(inv.chestplate == item.golden_chestplate, var.armortexG, if(inv.chestplate == item.iron_chestplate, var.armortexI, if(inv.chestplate == item.diamond_chestplate, var.armortexD, var.pskin)))))",
+			"position": [0, 0.5, "if(is_sneaking, 1.5, -0.5)"],
+			"rotation": [0, "if(is_sneaking, -17, 0)", 0],
+			"visible": "var.any_chest_eqd"
+		},
+		{
+			"id": "chestplate",
+			"parent": "chestplate_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4.5, -4, 4, 9, 8, 8]
+				}
+			]
+		},
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "var.pskin",
+			"boxes": []
+		},
+		{
+			"id": "head_c_hat",
+			"parent": "head_c",
+			"attached": ["head_wearing"],
+			"position": [0, -1, -1],
+			"scale": [1, 1, 1]
+		},
+		{
+			"id": "main_head_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, -1, 0]
+		},
+		{
+			"id": "main_head",
+			"parent": "main_head_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [42, 16],
+					"coordinates": [-3, -1, 1, 6, 6, 4]
+				},
+				{
+					"textureOffset": [0, 51],
+					"coordinates": [-0.5, 2, 1.5, 1, 4, 4]
+				},
+				{
+					"textureOffset": [10, 51],
+					"coordinates": [-2.5, 2, -3, 5, 1, 2]
+				}
+			]
+		},
+		{
+			"id": "beak_cpm_dummy",
+			"parent": "head_c",
+			"position": [0, 1, -3]
+		},
+		{
+			"id": "beak",
+			"parent": "beak_cpm_dummy",
+			"position": [0, 0, 1],
+			"boxes": []
+		},
+		{
+			"id": "btm_jaw",
+			"parent": "beak",
+			"position": [0, 0, 0.2],
+			"rotation": [0, "if(!is_on_ground && !is_riding && !var.is_sleeping, 0 - sin(time / 0.9) * 15, if(var.low_health || var.is_sleeping, 15 - sin(time / 4) * 5, 0))", 0],
+			"boxes": [
+				{
+					"textureOffset": [16, 44],
+					"coordinates": [-2.5, -1, 0, 5, 1, 3]
+				},
+				{
+					"textureOffset": [8, 59],
+					"coordinates": [-1, -3, -1, 2, 2, 1]
+				}
+			]
+		},
+		{
+			"id": "helmet_cpm_dummy",
+			"parent": "head_c",
+			"texture": "if(inv.helmet == item.leather_helmet, var.armortexL, if(inv.helmet == item.chainmail_helmet, var.armortexC, if(inv.helmet == item.golden_helmet, var.armortexG, if(inv.helmet == item.iron_helmet, var.armortexI, if(inv.helmet == item.diamond_helmet, var.armortexD, var.pskin)))))",
+			"position": [0, 1, -1],
+			"visible": "var.any_helm_eqd"
+		},
+		{
+			"id": "helmet",
+			"parent": "helmet_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-3.5, -4, 3.5, 7, 9, 6]
+				},
+				{
+					"textureOffset": [26, 16],
+					"coordinates": [-0.5, 1, 4, 1, 7, 7]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "var.pskin",
+			"position": [0, 0, 0],
+			"rotation": [0, "if(var.low_health && !is_riding, -35, 0)", 0],
+			"visible": "is_on_ground || is_riding || var.is_sleeping",
+			"boxes": [
+				{
+					"textureOffset": [0, 31],
+					"coordinates": [-1, -4, 6, 1, 6, 7]
+				}
+			]
+		},
+		{
+			"id": "left_wing_joint",
+			"parent": "body_c",
+			"position": [-4, 4, 0],
+			"visible": "!is_on_ground && !is_riding && !var.is_sleeping",
+			"boxes": []
+		},
+		{
+			"id": "left_wing",
+			"parent": "left_wing_joint",
+			"texture": "var.pskin",
+			"position": [7, 6, 6],
+			"rotation": [0, "if(!is_on_ground, -25 + sin(time / 1) * 25, if(var.low_health && !is_on_ground || var.low_hunger && !is_on_ground, -25 + sin(time / 11) * 25, 0))", "if(!is_on_ground, -70 + sin(time / 1) * -70, if(var.low_health && !is_on_ground || var.low_hunger && !is_on_ground, -70 + sin(time / 11) * -70, 0))"],
+			"visible": "!is_on_ground && !is_riding && !var.is_sleeping",
+			"boxes": [
+				{
+					"textureOffset": [0, 31],
+					"coordinates": [-8, -12, -1, 1, 6, 7]
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"scale": [0.9, 0.9, 0.9],
+			"position": [-0.4, -5, -2]
+		},
+		{
+			"id": "left_wing_flying_item",
+			"parent": "left_wing",
+			"attached": ["held_item_left"],
+			"scale": [0.9, 0.9, 0.9],
+			"position": [-8, -11, -13],
+			"rotation": [0, 25, 0]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "var.pskin",
+			"position": [0, 0, 0],
+			"rotation": [0, "if(var.low_health && !is_riding, -35, 0)", 0],
+			"visible": "is_on_ground || is_riding || var.is_sleeping",
+			"boxes": [
+				{
+					"textureOffset": [16, 31],
+					"coordinates": [0, -4, 6, 1, 6, 7]
+				}
+			]
+		},
+		{
+			"id": "right_wing_joint",
+			"parent": "body_c",
+			"position": [4, 4, 0],
+			"visible": "!is_on_ground && !is_riding && !var.is_sleeping",
+			"boxes": []
+		},
+		{
+			"id": "right_wing",
+			"parent": "right_wing_joint",
+			"texture": "var.pskin",
+			"position": [-9, 6, 6],
+			"rotation": [0, "if(!is_on_ground, -25 + sin(time / 1) * 25, 0)", "if(!is_on_ground, 70 + sin(time / 1) * 70, 0)"],
+			"visible": "!is_on_ground && !is_riding && !var.is_sleeping",
+			"boxes": [
+				{
+					"textureOffset": [16, 31],
+					"coordinates": [9, -12, -1, 1, 6, 7]
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"scale": [0.9, 0.9, 0.9],
+			"position": [0.4, -5, -2]
+		},
+		{
+			"id": "right_wing_flying_item",
+			"parent": "right_wing",
+			"attached": ["held_item_right"],
+			"scale": [0.9, 0.9, 0.9],
+			"position": [8, -11, -13],
+			"rotation": [0, 25, 0]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "var.pskin",
+			"rotation": [0, 0, 0],
+			"boxes": []
+		},
+		{
+			"id": "left_leg",
+			"parent": "left_leg_c",
+			"position": [0, 0, 0.5],
+			"boxes": []
+		},
+		{
+			"id": "upper_left_leg",
+			"parent": "left_leg_c",
+			"rotation": [0, "if(var.low_health && !is_riding, 40, 10)", 0],
+			"boxes": [
+				{
+					"textureOffset": [0, 59],
+					"coordinates": [-1, -3.88259, 0.54989, 2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "left_leg_armor_cpm_dummy",
+			"parent": "upper_left_leg",
+			"texture": "if(inv.leggings == item.leather_leggings, var.armortexL, if(inv.leggings == item.chainmail_leggings, var.armortexC, if(inv.leggings == item.golden_leggings, var.armortexG, if(inv.leggings == item.iron_leggings, var.armortexI, if(inv.leggings == item.diamond_leggings, var.armortexD, var.pskin)))))",
+			"position": [0, -1, -0.5],
+			"visible": "var.any_legs_eqd"
+		},
+		{
+			"id": "left_leg_armor",
+			"parent": "left_leg_armor_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [44, 44],
+					"coordinates": [-1.5, -2.68309, 1.5, 3, 4, 3]
+				}
+			]
+		},
+		{
+			"id": "lower_left_leg_cpm_dummy",
+			"parent": "upper_left_leg",
+			"position": [0, "if(var.low_health && !is_riding, -3.8, -3.2)", "if(var.low_health && !is_riding, 1.5, -0.43122)"],
+			"rotation": [0, "if(var.low_health && !is_riding, -40, 0)", 0]
+		},
+		{
+			"id": "lower_left_leg",
+			"parent": "lower_left_leg_cpm_dummy",
+			"rotation": [0, -25, 0],
+			"boxes": [
+				{
+					"textureOffset": [18, 59],
+					"coordinates": [-0.5, -2.20259, 0.43122, 1, 3, 1]
+				}
+			]
+		},
+		{
+			"id": "left_talons_cpm_dummy",
+			"parent": "left_leg_c",
+			"position": [4, -5, "if(var.low_health && !is_riding, 1.2, 0)"]
+		},
+		{
+			"id": "left_talons",
+			"parent": "left_talons_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [24, 51],
+					"coordinates": [-5.5, -1, 0.5, 3, 1, 3]
+				}
+			]
+		},
+		{
+			"id": "left_boot_cpm_dummy",
+			"parent": "left_leg_c",
+			"texture": "if(inv.boots == item.leather_boots, var.armortexL, if(inv.boots == item.chainmail_boots, var.armortexC, if(inv.boots == item.golden_boots, var.armortexG, if(inv.boots == item.iron_boots, var.armortexI, if(inv.boots == item.diamond_boots, var.armortexD, var.pskin)))))",
+			"scale": [0.9, 0.75, 1],
+			"position": [0, -6.6, 0],
+			"visible": "var.any_boots_eqd"
+		},
+		{
+			"id": "left_boot",
+			"parent": "left_boot_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [0, 44],
+					"coordinates": [-2, -1.5, 1, 4, 2, 4]
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "var.pskin",
+			"boxes": []
+		},
+		{
+			"id": "right_leg",
+			"parent": "right_leg_c",
+			"position": [0, 0, 0.5],
+			"boxes": []
+		},
+		{
+			"id": "upper_right_leg",
+			"parent": "right_leg_c",
+			"rotation": [0, "if(var.low_health && !is_riding, 40, 10)", 0],
+			"boxes": [
+				{
+					"textureOffset": [36, 51],
+					"coordinates": [-1, -3.88259, 0.54989, 2, 4, 2]
+				}
+			]
+		},
+		{
+			"id": "right_leg_armor_cpm_dummy",
+			"parent": "upper_right_leg",
+			"position": [0, -1, -0.5],
+			"texture": "if(inv.leggings == item.leather_leggings, var.armortexL, if(inv.leggings == item.chainmail_leggings, var.armortexC, if(inv.leggings == item.golden_leggings, var.armortexG, if(inv.leggings == item.iron_leggings, var.armortexI, if(inv.leggings == item.diamond_leggings, var.armortexD, var.pskin)))))",
+			"visible": "var.any_legs_eqd"
+		},
+		{
+			"id": "right_leg_armor",
+			"parent": "right_leg_armor_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [32, 44],
+					"coordinates": [-1.5, -2.68309, 1.5, 3, 4, 3]
+				}
+			]
+		},
+		{
+			"id": "lower_right_leg_cpm_dummy",
+			"parent": "upper_right_leg",
+			"position": [0, "if(var.low_health && !is_riding, -3.8, -3.2)", "if(var.low_health && !is_riding, 1.5, -0.43122)"],
+			"rotation": [0, "if(var.low_health && !is_riding, -40, 0)", 0]
+		},
+		{
+			"id": "lower_right_leg",
+			"parent": "lower_right_leg_cpm_dummy",
+			"rotation": [0, -25, 0],
+			"boxes": [
+				{
+					"textureOffset": [14, 59],
+					"coordinates": [-0.5, -2.20259, 0.43122, 1, 3, 1]
+				}
+			]
+		},
+		{
+			"id": "right_talons_cpm_dummy",
+			"parent": "right_leg_c",
+			"position": [-4, -5, "if(var.low_health && !is_riding, 1.2, 0)"]
+		},
+		{
+			"id": "right_talons",
+			"parent": "right_talons_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [10, 54],
+					"coordinates": [2.5, -1, 0.5, 3, 1, 3]
+				}
+			]
+		},
+		{
+			"id": "right_boot_cpm_dummy",
+			"parent": "right_leg_c",
+			"texture": "if(inv.boots == item.leather_boots, var.armortexL, if(inv.boots == item.chainmail_boots, var.armortexC, if(inv.boots == item.golden_boots, var.armortexG, if(inv.boots == item.iron_boots, var.armortexI, if(inv.boots == item.diamond_boots, var.armortexD, var.pskin)))))",
+			"scale": [0.9, 0.75, 1],
+			"position": [0, -6.6, 0],
+			"visible": "var.any_boots_eqd"
+		},
+		{
+			"id": "right_boot",
+			"parent": "right_boot_cpm_dummy",
+			"boxes": [
+				{
+					"textureOffset": [32, 31],
+					"coordinates": [-2, -1.5, 1, 4, 2, 4]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,192 @@
+{
+	"modelId": "layton",
+	"modelName": "Professor Layton (Vanilla-Styled)",
+	"author": "eros744",
+	"version": 1.0,
+	"hide": ["model_all", "feature_all"],
+	"skeleton": {
+		"head_all": [0, "if(is_sneaking,-1.0000,0.0000)", 0],
+		"body_all": [0, 0, 0],
+		"right_arm_all": [5, -2, 0],
+		"left_arm_all": [-5, -2, 0],
+		"right_leg_all": [1.9, -12, "if(is_sneaking,4.0000,0.0000)"],
+		"left_leg_all": [-1.9, -12, "if(is_sneaking,4.0000,0.0000)"]
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"texture": "tex.layton",
+			"boxes": [
+				{
+					"textureOffset": [192, 21],
+					"coordinates": [-4, 0, 4, 8, 11, 8]
+				},
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.5
+				},
+				{
+					"textureOffset": [67, 0],
+					"coordinates": [-5, 3, 5, 10, 1, 10]
+				},
+				{
+					"textureOffset": [69, 1],
+					"coordinates": [-5.5, -1.32976, 5.51688, 11, 3.2, 8.6],
+					"sizeAdd": -1
+				}
+			]
+		},
+		{
+			"id": "head_c_helmet_hat",
+			"parent": "head_c",
+			"attached": ["helmet_all", "head_wearing"]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"texture": "tex.layton",
+			"boxes": [
+				{
+					"textureOffset": [16, 16],
+					"coordinates": [-4, -10, 2, 8, 10, 4]
+				},
+				{
+					"textureOffset": [64, 56],
+					"coordinates": [-4, -10, 2, 8, 10, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "body_c_chestplate_body",
+			"parent": "body_c",
+			"attached": ["armor_body_all"]
+		},
+		{
+			"id": "body_c_cape_elytra",
+			"parent": "body_c_chestplate_body",
+			"attached": ["cape", "elytra"],
+			"texture": "tex.skin"
+		},
+		{
+			"id": "body_c_parrot_left",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_left"],
+			"position": [-6.5, 10, 0]
+		},
+		{
+			"id": "body_c_parrot_right",
+			"parent": "body_c",
+			"attached": ["shoulder_parrot_right"],
+			"position": [6.5, 10, 0]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"texture": "tex.layton",
+			"boxes": [
+				{
+					"textureOffset": [128, 0],
+					"coordinates": [-1, -7.4, 2, 3.4, 9.4, 4]
+				},
+				{
+					"textureOffset": [132, 32],
+					"coordinates": [-1, -9.4, 2, 3.4, 2, 4]
+				},
+				{
+					"textureOffset": [237, 190],
+					"coordinates": [-1, -10, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "right_arm_c_chestplate_right",
+			"parent": "right_arm_c",
+			"attached": ["chestplate_right_arm"],
+			"position": [0, -2, 0]
+		},
+		{
+			"id": "right_arm_c_item_right",
+			"parent": "right_arm_c",
+			"attached": ["held_item_right"],
+			"position": [1, -12, -1]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"texture": "tex.layton",
+			"boxes": [
+				{
+					"textureOffset": [144, 0],
+					"coordinates": [-2.5, -7.5, 2, 3.5, 9.5, 4]
+				},
+				{
+					"textureOffset": [134, 32],
+					"coordinates": [-2.5, -9.5, 2, 3.5, 2, 4]
+				},
+				{
+					"textureOffset": [122, 100],
+					"coordinates": [-3, -10, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "left_arm_c_chestplate_left",
+			"parent": "left_arm_c",
+			"attached": ["chestplate_left_arm"],
+			"position": [0, -2, 0]
+		},
+		{
+			"id": "left_arm_c_item_left",
+			"parent": "left_arm_c",
+			"attached": ["held_item_left"],
+			"position": [-1, -12, -1]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"texture": "tex.layton",
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-1.9, -12, 2, 4, 14, 4]
+				},
+				{
+					"textureOffset": [75, 111],
+					"coordinates": [-1.9, -12, 2, 3.9, 14, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "right_leg_c_legging_right",
+			"parent": "right_leg_c",
+			"attached": ["armor_right_leg_all"]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"texture": "tex.layton",
+			"boxes": [
+				{
+					"textureOffset": [16, 44],
+					"coordinates": [-2.1, -12, 2, 4, 14, 4]
+				},
+				{
+					"textureOffset": [133, 111],
+					"coordinates": [-2, -12, 2, 3, 14, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "left_leg_c_legging_left",
+			"parent": "left_leg_c",
+			"attached": ["armor_left_leg_all"]
+		}
+	]
+}

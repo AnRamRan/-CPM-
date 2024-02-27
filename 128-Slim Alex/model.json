@@ -1,0 +1,257 @@
+{
+	"modelId": "slim_alex",
+	"modelName": "Slim Alex",
+	"version": "1.0.0",
+	"author": "Aile_Rozy",
+	
+	"hide": ["model_all", "held_item_all", "armor_body_all", "armor_arms_all", "armor_legs_all", "helmet_all"],
+	"fpLeft": ["left_arm_c"],
+	"fpRight": ["right_arm_c"],
+	
+	"variables": {
+		"idle": "(speed_x == 0) && (speed_z == 0)",
+		"crouch": "!is_in_water && is_sneaking && is_on_ground",
+		"is_inair": "!is_on_ground && !is_in_water",
+		"empty_hands": "(inv.mainhand == 0) && (inv.offhand == 0)"
+
+	},
+	"tickVars": {
+		"idletime": ["float", 1, "cos(age/21)* 0.0525 + 1"]
+	},
+	"skeleton": {
+
+
+		"head_all": [0, "if(var.crouch,-1,0)", 0],
+		"body_all": [0, 0, 0.1],
+		"left_arm_all": [-4.5, -2.5, 0],
+		"right_arm_all": [4.5, -2.5, 0],
+		"left_leg_all": [
+			-1.9, "if(is_sneaking, -9, -11.9)", "if(is_sneaking, 4, -0.24)"
+		],
+		"right_leg_all": [
+			1.9, "if(is_sneaking, -9, -11.9)", "if(is_sneaking, 4, -0.24)"
+		]
+	},
+	"eyeHeight": {
+		"standing": 1.62,
+		"dying": 1.62,
+		"sneaking": 1.3
+	},
+	"boundingBox": {
+        "standing": [0.5, 1.8],
+        "dying": [0.5, 1.8],
+        "sneaking": [0.5, 1.5]
+	},
+	"bones": [
+		{
+			"id": "head_c",
+			"parent": "head",
+			"textureSize": [64, 64],
+			"boxes": [
+				{
+					"textureOffset": [0, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8]
+				},
+				{
+					"textureOffset": [32, 0],
+					"coordinates": [-4, 0, 4, 8, 8, 8],
+					"sizeAdd": 0.5
+				}
+			]
+		},
+		{
+			"id": "body_c",
+			"parent": "body",
+			"scale": ["clamp(tvc.idletime, 1, 1.05)*0.87", 1, "clamp(tvc.idletime, 1, 1.05)*1.05"],
+			"rotation": [0, -0.25, 0],
+			"boxes": [
+				{
+					"textureOffset": [16, 16],
+					"coordinates": [-4, -12, 2, 8, 12, 4]
+				},
+				{
+					"textureOffset": [16, 32],
+					"coordinates": [-4, -12, 2, 8, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "left_arm_c",
+			"parent": "left_arm",
+			"position": [0, 0, 0],
+			"scale": [1, 1, 0.9],
+			"rotation": [
+			"if(var.crouch && var.idle && var.empty_hands, 50, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, 10, -10)"
+			],
+			"boxes": [
+				{
+					"textureOffset": [32, 48],
+					"coordinates": [-2, -10, 2, 3, 12, 4]
+				},
+				{
+					"textureOffset": [48, 48],
+					"coordinates": [-2, -10, 2, 3, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "right_arm_c",
+			"parent": "right_arm",
+			"position": [0, 0, 0],
+			"scale": ["left_arm_c.sx", "left_arm_c.sy", "left_arm_c.sz"],
+			"rotation": [
+			"if(var.crouch && var.idle && var.empty_hands, -50, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 10)"
+			],
+			"boxes": [
+				{
+					"textureOffset": [40, 16],
+					"coordinates": [-1, -10, 2, 3, 12, 4]
+				},
+				{
+					"textureOffset": [40, 32],
+					"coordinates": [-1, -10, 2, 3, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "left_leg_c",
+			"parent": "left_leg",
+			"scale": [0.8, 1, 0.9],
+			"rotation": [0, -0.5, 1.0],
+			"boxes": [
+				{
+					"textureOffset": [16, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 48],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+		{
+			"id": "right_leg_c",
+			"parent": "right_leg",
+			"scale": ["left_leg_c.sx", "left_leg_c.sy", "left_leg_c.sz"],
+			"rotation": [0, 0, -1.0],
+			"boxes": [
+				{
+					"textureOffset": [0, 16],
+					"coordinates": [-2, -12, 2, 4, 12, 4]
+				},
+				{
+					"textureOffset": [0, 32],
+					"coordinates": [-2, -12, 2, 4, 12, 4],
+					"sizeAdd": 0.25
+				}
+			]
+		},
+
+		{
+			"id": "head_helmet",
+			"parent": "head",
+			"position": [0, -1, 0],
+			"rotation": ["head_c.rx", "head_c.ry", "head_c.rz"],
+			"attached": ["helmet_all"]
+		},
+		{
+			"id": "body_chestplate",
+			"parent": "body",
+			"scale": ["body_c.sx * 0.9", "body_c.sy * 0.9", "body_c.sz * 0.9"],
+			"rotation": ["body_c.rx", "body_c.ry", "body_c.rz"],
+			"attached": ["chestplate_body"]
+		},
+		{
+			"id": "left_chestplate",
+			"parent": "left_arm",
+			"scale": ["left_arm_c.sx * 0.9", "left_arm_c.sy * 0.9", "left_arm_c.sz * 0.9"],
+			"rotation": [
+			"if(var.crouch && var.idle && var.empty_hands, 50, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, 10, -10)"
+			],
+			"attached": ["chestplate_left_arm"]
+		},
+		{
+			"id": "left_item",
+			"parent": "left_arm",
+			"position": [0, "left_arm_c.ty - 10", "left_arm_c.tz - 2"],
+			"rotation": [
+			"if(var.crouch && var.idle && var.empty_hands, 50, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, 10, -10)"
+			],
+			"attached": ["held_item_left"]
+		},
+		{
+			"id": "right_chestplate",
+			"parent": "right_arm",
+			"scale": ["right_arm_c.sx * 0.9", "right_arm_c.sy * 0.9", "right_arm_c.sz * 0.9"],
+			"rotation": [
+			"if(var.crouch && var.idle && var.empty_hands, -50, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 10)"
+			],
+			"attached": ["chestplate_right_arm"]
+		},
+		{
+			"id": "body_leggings",
+			"parent": "body",
+			"scale": ["body_c.sx * 0.95", "body_c.sy * 0.95", "body_c.sz * 0.95"],
+			"rotation": ["body_c.rx", "body_c.ry", "body_c.rz"],
+			"attached": ["leggings_body"]
+		},
+		{
+			"id": "right_item",
+			"parent": "right_arm",
+			"position": [0, "right_arm_c.ty - 10", "right_arm_c.tz - 2"],
+			"rotation": [
+			"if(var.crouch && var.idle && var.empty_hands, -50, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 0)",
+			"if(var.crouch && var.idle && var.empty_hands, -10, 10)"
+			],
+			"attached": ["held_item_right"]
+		},
+		{
+			"id": "left_legging",
+			"parent": "left_leg",
+			"position": [0, "left_leg_c.ty - 0.4", "left_leg_c.tz"],
+			"scale": ["left_leg_c.sx * 0.9", "left_leg_c.sy * 0.9", "left_leg_c.sz * 0.9"],
+			"rotation": ["left_leg_c.rx", "left_leg_c.ry", "left_leg_c.rz"],
+			"attached": ["leggings_left_leg"]
+		},
+		{
+			"id": "left_boot",
+			"parent": "left_leg",
+			"position": [0, "left_leg_c.ty - 0.7", "left_leg_c.tz"],
+			"scale": ["left_leg_c.sx * 0.9", "left_leg_c.sy * 0.9", "left_leg_c.sz * 0.9"],
+			"rotation": ["left_leg_c.rx", "left_leg_c.ry", "left_leg_c.rz"],
+			"attached": ["boots_left_leg"]
+		},
+		{
+			"id": "right_legging",
+			"parent": "right_leg",
+			"position": [0, "right_leg_c.ty - 0.4", "right_leg_c.tz"],
+			"scale": ["right_leg_c.sx * 0.9", "right_leg_c.sy * 0.9", "right_leg_c.sz * 0.9"],
+			"rotation": ["right_leg_c.rx", "right_leg_c.ry", "right_leg_c.rz"],
+			"attached": ["leggings_right_leg"]
+		},
+		{
+			"id": "right_boot",
+			"parent": "right_leg",
+			"position": [0, "right_leg_c.ty - 0.7", "right_leg_c.tz"],
+			"scale": ["right_leg_c.sx * 0.9", "right_leg_c.sy * 0.9", "right_leg_c.sz * 0.9"],
+			"rotation": ["right_leg_c.rx", "right_leg_c.ry", "right_leg_c.rz"],
+			"attached": ["boots_right_leg"]
+		}
+
+	]
+}
